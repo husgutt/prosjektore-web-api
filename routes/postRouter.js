@@ -63,11 +63,12 @@ function routes(Post) {
       });
     })
     .delete((req, res) => {
+      const { post } = req;
       req.post.remove((err) => {
         if(err) {
           return res.send(err);
         }
-        return res.sendStatus(204);
+        return res.json(post);
       })
     });
  
