@@ -8,4 +8,4 @@ db.createUser(
         db:"postAPI"
       }]
   }
-)
+);

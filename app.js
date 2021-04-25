@@ -18,5 +18,6 @@ app.use('/api', backlogRouter);
 
 app.listen(port, () => {
   console.log(`Running on port ${port}`);
+  console.log(`mongodb://${process.env.USER}:${process.env.PASSWORD}@${process.env.DB_HOST}/${process.env.DB}`);
 });
  

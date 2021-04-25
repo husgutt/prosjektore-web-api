@@ -9,6 +9,7 @@ function routes(Post) {
       res.status(201).json(post)
     })
     .get((req, res) => {
+      console.log('her')
       const { query } = req;
       Post.find(query, (err, posts) => {
         if (err) {
