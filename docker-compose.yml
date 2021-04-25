@@ -7,9 +7,9 @@ services:
     environment:
       NODE_ENV: production
       DB_HOST: mongodb
-      USER: tore
-      PASSWORD: password
-      DB: postAPI
+      USER: "${WEB_API_USER}"
+      PASSWORD: "${WEB_API_PASSWORD}"
+      DB: "${WEB_API_DB}"
     ports:
       - 3000:3000
     volumes: 
@@ -21,9 +21,9 @@ services:
     image: mongo:4.4.5
     container_name: mongodb
     environment: 
-      - MONGO_INITDB_DATABASE=postAPI
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE= "${MONGO_INITDB_DATABASE}"
+      - MONGO_INITDB_ROOT_USERNAME= "${MONGO_INITDB_ROOT_USERNAME}"
+      - MONGO_INITDB_ROOT_PASSWORD= "${MONGO_INITDB_ROOT_PASSWORD}"
     ports:
       - 27017:27017
     volumes:
